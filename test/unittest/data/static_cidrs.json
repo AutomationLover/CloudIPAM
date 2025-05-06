@@ -1,0 +1,28 @@
+{
+  "cidrs": [
+    {
+      "cidr": "10.0.0.0/8",
+      "type": "STATIC",
+      "tags": {
+        "environment": "prod",
+        "region": "global"
+      }
+    },
+    {
+      "cidr": "10.1.0.0/16",
+      "type": "VPC",
+      "tags": {
+        "environment": "prod",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "cidr": "10.2.0.0/16",
+      "type": "VPC",
+      "tags": {
+        "environment": "dev",
+        "region": "us-west-2"
+      }
+    }
+  ]
+}

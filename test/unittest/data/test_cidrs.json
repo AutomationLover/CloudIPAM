@@ -1,0 +1,44 @@
+{
+    "cidrs": [
+        {
+            "cidr": "10.0.0.0/8",
+            "type": "VPC",
+            "tags": {
+                "environment": "prod",
+                "purpose": "base"
+            }
+        },
+        {
+            "cidr": "10.1.0.0/16",
+            "type": "SUBNET",
+            "tags": {
+                "environment": "prod",
+                "purpose": "web"
+            }
+        },
+        {
+            "cidr": "10.2.0.0/16",
+            "type": "SUBNET",
+            "tags": {
+                "environment": "prod",
+                "purpose": "db"
+            }
+        },
+        {
+            "cidr": "192.168.0.0/16",
+            "type": "VPC",
+            "tags": {
+                "environment": "dev",
+                "purpose": "test"
+            }
+        },
+        {
+            "cidr": "192.168.1.0/24",
+            "type": "SUBNET",
+            "tags": {
+                "environment": "dev",
+                "purpose": "web"
+            }
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+  "cidrs": [
+    {
+      "cidr": "10.100.0.0/16",
+      "type": "VPC",
+      "tags": {
+        "Name": "test-vpc-1",
+        "Environment": "test"
+      }
+    },
+    {
+      "cidr": "10.100.1.0/24",
+      "type": "SUBNET",
+      "tags": {
+        "Name": "test-subnet-1a",
+        "AvailabilityZone": "us-east-1a"
+      }
+    },
+    {
+      "cidr": "10.100.1.0/28",
+      "type": "POD",
+      "tags": {
+        "Name": "test-pod-1a-1",
+        "Tier": "web"
+      }
+    },
+    {
+      "cidr": "10.100.2.0/24",
+      "type": "SUBNET",
+      "tags": {
+        "Name": "test-subnet-1b",
+        "AvailabilityZone": "us-east-1b"
+      }
+    },
+    {
+      "cidr": "10.200.0.0/16",
+      "type": "VPC",
+      "tags": {
+        "Name": "test-vpc-2",
+        "Environment": "staging"
+      }
+    },
+    {
+      "cidr": "10.200.1.0/24",
+      "type": "SUBNET",
+      "tags": {
+        "Name": "staging-subnet-1a",
+        "AvailabilityZone": "us-west-2a"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "cidrs": [
+    {
+      "cidr": "10.100.0.0/16",
+      "type": "VPC",
+      "tags": {
+        "Name": "test-vpc-1",
+        "Environment": "test"
+      }
+    },
+    {
+      "cidr": "10.200.0.0/16",
+      "type": "VPC",
+      "tags": {
+        "Name": "test-vpc-2",
+        "Environment": "staging"
+      }
+    }
+  ]
+}

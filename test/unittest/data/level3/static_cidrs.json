@@ -1,0 +1,56 @@
+{
+  "cidrs": [
+    {
+      "cidr": "10.0.0.0/8",
+      "type": "NETWORK",
+      "tags": {
+        "environment": "prod",
+        "region": "global"
+      }
+    },
+    {
+      "cidr": "10.1.0.0/16",
+      "type": "VPC",
+      "tags": {
+        "environment": "prod",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "cidr": "10.1.1.0/24",
+      "type": "SUBNET",
+      "tags": {
+        "environment": "prod",
+        "region": "us-east-1",
+        "purpose": "application"
+      }
+    },
+    {
+      "cidr": "10.1.1.0/28",
+      "type": "POD",
+      "tags": {
+        "environment": "prod",
+        "region": "us-east-1",
+        "purpose": "application",
+        "tier": "web"
+      }
+    },
+    {
+      "cidr": "10.1.2.0/24",
+      "type": "SUBNET",
+      "tags": {
+        "environment": "prod",
+        "region": "us-east-1",
+        "purpose": "database"
+      }
+    },
+    {
+      "cidr": "10.2.0.0/16",
+      "type": "VPC",
+      "tags": {
+        "environment": "staging",
+        "region": "us-west-2"
+      }
+    }
+  ]
+}
