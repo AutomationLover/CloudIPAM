@@ -1,0 +1,18 @@
+@startuml
+@startuml
+class CIDRNode {
+  - cidr: str
+  - parent: CIDRNode
+  - chickenList: List<CIDRNode>
+  + net: ip_network
+  + contains_cidr(cidr_str: str): bool
+}
+
+class CIDRTree {
+  - rootCidrNode: CIDRNode
+  + formTreeFromCidrList(cidr_list: List[str])
+  + getCidrTree(cidrString: str): JSON
+}
+@enduml
+
+@enduml
