@@ -27,14 +27,18 @@ class CIDRNode:
 class CIDRTree:
     def __init__(self):
         self.rootCidrNode = CIDRNode()
+        self.cidr_map = {}  # Maps cidr string to CIDRNode
 
     def formTreeFromCidrList(self, cidr_list: List[str]) -> None:
         # Clear any previous tree
         self.rootCidrNode.chickenList.clear()
+        self.cidr_map.clear()
         nodes = []
-        # Create nodes for each CIDR
+        # Create nodes for each CIDR and update map
         for cidr_str in cidr_list:
-            nodes.append(CIDRNode(cidr=cidr_str))
+            node = CIDRNode(cidr=cidr_str)
+            nodes.append(node)
+            self.cidr_map[cidr_str] = node
         # Sort by prefix length (shortest first)
         nodes.sort(key=lambda n: (n.net.version, n.net.prefixlen))
         # Build tree
@@ -62,19 +66,8 @@ class CIDRTree:
             return {child.cidr: node_to_dict(child) for child in node.chickenList}
         if cidrString is None:
             return json.dumps({"null": node_to_dict(self.rootCidrNode)})
-        # Find the node for cidrString
-        def find_node(node, target):
-            if node.cidr == target:
-                return node
-            # Only search children if target is within node's CIDR
-            if not node.contains_cidr(target):
-                return None
-            for child in node.chickenList:
-                found = find_node(child, target)
-                if found:
-                    return found
-            return None
-        start_node = find_node(self.rootCidrNode, cidrString)
-        if start_node:
-            return json.dumps({cidrString: node_to_dict(start_node)})
+        # Use cidr_map for direct lookup
+        node = self.cidr_map.get(cidrString)
+        if node:
+            return json.dumps({cidrString: node_to_dict(node)})
         return json.dumps({})

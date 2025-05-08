@@ -1,5 +1,4 @@
 @startuml
-@startuml
 class CIDRNode {
   - cidr: str
   - parent: CIDRNode
@@ -10,9 +9,8 @@ class CIDRNode {
 
 class CIDRTree {
   - rootCidrNode: CIDRNode
+  - cidr_map: Dict[str, CIDRNode]
   + formTreeFromCidrList(cidr_list: List[str])
   + getCidrTree(cidrString: str): JSON
 }
-@enduml
-
 @enduml
